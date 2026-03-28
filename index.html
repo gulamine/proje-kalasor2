@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hercules of Marmaris</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f7fb;color:#333;scroll-behavior:smooth;}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.15);
+backdrop-filter: blur(10px);
+padding:15px 0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:90%;
+margin:auto;
+color:white;
+}
+
+nav h2{font-weight:700;}
+
+nav ul{display:flex;gap:25px;list-style:none;}
+nav a{color:white;text-decoration:none;font-size:14px;}
+nav a:hover{color:#00c6ff;}
+.hero{
+min-height:100vh;
+height:auto;
+background:url('images/tekne.jpg') center/cover no-repeat; /* geri ekledik */
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+transition: background 1s ease-in-out;
+filter: brightness(1.15) contrast(1.1) saturate(1.2);
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:linear-gradient(
+  rgba(0,0,0,0.25),
+  rgba(0,0,0,0.15)
+);
+}
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+@media (max-width:768px){
+    .hero{
+    min-height:75vh;
+    padding:20px;
+  }
+.hero h1{
+    font-size:26px;
+    line-height:1.2;
+  }
+  hero p{
+    font-size:15px;
+  }
+
+}
+
+
+section{
+padding:90px 20px;
+width:90%;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-size:34px;
+}
+
+.card{
+background:rgb(194, 230, 239);
+padding:25px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+}
+
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.feature{
+padding:20px;
+background:rgb(192, 209, 220);
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:rgb(172, 209, 235);
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:#0a2540;
+color:rgb(209, 223, 236);
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h2>⚓Hercules of Marmaris</h2>
+<ul>
+<li><a href="#">Ana Sayfa</a></li>
+<li><a href="#about">Hakkımızda</a></li>
+<li><a href="#tours">Turlar</a></li>
+<li><a href="#features">Özellikler</a></li>
+<li><a href="#gallery">Galeri</a></li>
+<li><a href="#contact">İletişim</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="hero" id="hero">
+<div class="hero-content">
+<h1>Hercules of Marmaris</h1>
+<p>Lazy Day Out Boat Trip</p>
+<p>Kadın Kaptan</p>
+</div>
+</div>
+<script>
+  // Kullanmak istediğin resimleri buraya ekle
+  const heroImages = [
+    "images/tekne.jpg",
+    "images/tekne2.jpg",
+    "images/tekne3.jpg",
+    "images/tekne4.jpg",
+    "images/tekne5.jpg",
+    "images/tekne6.jpg",
+    "images/tekne7.jpg",
+    "images/tekne8.jpg",
+    "images/tekne9.jpg",
+    "images/tekne10.jpg"
+  ];
+
+  let currentIndex = 0;
+  const heroSection = document.getElementById("hero");
+
+  function changeHeroImage() {
+    heroSection.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
+    heroSection.style.backgroundSize = "cover";
+    heroSection.style.backgroundPosition = "center";
+    currentIndex = (currentIndex + 1) % heroImages.length;
+  }
+
+    // İlk resmi hemen yükle
+  changeHeroImage();
+  // 3 saniyede bir resmi değiştir
+  setInterval(changeHeroImage, 3000);
+</script> 
+
+<section id="about">
+<h2>Hakkımızda</h2>
+<div class="card">
+ <p>Hercules Marmaris olarak denizi sadece bir rota değil, bir yaşam tarzı olarak görüyoruz. Marmaris’in eşsiz koylarında, misafirlerimize huzur, eğlence ve güven dolu bir deneyim sunmak için yola çıktık.
+
+Bu yolculuğun en özel yanı ise, teknemizin kaptanı olan Kaptan Ayla. Güçlü duruşu, tecrübesi ve enerjisiyle denizde fark yaratan bir kadın kaptan olarak, misafirlerimize hem güvenli hem de samimi bir ortam sunuyor. Onun liderliğinde her tur, sadece bir gezi değil; keyifli anılarla dolu özel bir deneyime dönüşüyor.
+
+Küçük ama konforlu teknemizle, kalabalıktan uzak, size özel bir gün yaşatmayı hedefliyoruz. Her detayda misafir memnuniyetini ön planda tutarak, doğaya saygılı ve kaliteli bir hizmet sunuyoruz.
+
+Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutluluğu da keşfedeceksiniz.</p>
+</div>
+</section>
+
+
+<section id="tours">
+<h2>Turlar</h2>
+<div class="grid">
+<div class="card">
+
+<h3>🏝️ Rotamızdaki Koylar</h3>
+</p>Gün boyunca ziyaret edeceğiniz koylar</p>
+	</p>Cennet Koyu</p>
+	</p>Palmiye Koyu</p>
+	</p>Kızılkum</p>
+	</p>Akvaryum Koyu</p>
+	</p>Keçi Koyu</p>
+	</p>Yeşil Deniz</p>
+	</p>Turunç Koyu</p>
+	</p>Amos</p>
+	</p>Kumlubük</p>
+	</p>Baklabükü</p>
+	</p>Kadırga</p>
+    </div>
+
+
+<div class="card">
+<h3>🚤 Günlük Tekne Gezisi</h3>
+<p>10:00 - 17:00</p>
+<p>Marmaris’in en güzel koylarında gün boyu gezinti</p>
+	</p>•	Yüzme molaları ve deniz keyfi</p>
+	</p>•	Yemekli tur seçeneği (tavuk, makarna, salata)</p>
+    <p>8 kişilik kapasite</p>
+</div>
+<div class="card">
+<h3>🌙 Özel Gece & Mehtap Turları</h3>
+<p> Özel Gece & Mehtap Turları</p>
+	</p>•	Romantik mehtap turları</p>
+	</p>•	Doğum günü, düğün veya nişan gibi özel kutlamalar için ideal</p>
+	</p>•	Sadece davetli gruba özel, samimi ve güvenli ortam</p>
+<p>8 kişilik kapasite</p>
+</div>
+
+<div class="card">
+<h3>🌙Özel Organizasyon</h3>
+<p>Düğün, nişan, doğum günü</p>
+<p>8 kişilik kapasite</p>
+</div>
+
+<div class="card"> 
+<h3>🌙Kadın Kaptanlı Tur</h3>
+<p>Muhafazakar konsept</p>
+	</p>•	Sadece kadınlar ve aileler için özel tur</p>
+	</p>•	Huzurlu, rahat ve güvenli ortam</p>
+	</p>•	Denizde özgürce eğlenebileceğiniz özel düzenlemeler</p>
+    <p>8 kişilik kapasite</p>
+</div>
+<div class="card">
+<h3> ₺ Fiyat ve Rezervasyon</h3>
+<p> 📞+90 545 850 85 11</p>
+<p> 📧Gmail. info@herculesmarmaris.com</p>
+<p> İletişime Gecebilirsiniz</p>
+</div>
+</section>
+
+<section id="features">
+<h2>Tekne hizmetleri</h2>
+<div class="features">
+</div>🚤 Hercules Marmaris – Öne Çıkan Özellikler.👩</div>
+
+Kaptan Ayla eşliğinde güvenli, 
+samimi ve enerjik bir yolculuk.
+
+🍽️
+Yemekli Tur
+Tavuk, makarna ve salata ile lezzetli öğle yemeği sunulur.
+
+🛥️
+Özel Tekne
+Maksimum 8 kişilik, konforlu ve özel bir ortam.
+
+🏝️
+11 Muhteşem Koy
+Cennet, Palmiye, Kızılkum, Akvaryum, Keçi ve diğer muhteşem koylar.
+🌊
+Yüzme Molaları
+Günlük 3–5 molada deniz ve güneşin tadını çıkarabilirsiniz.
+🏖️
+Kişisel Eşyalar
+Havlu, deniz gözlüğü ve sevdiğiniz atıştırmalıklar yanınızda olabilir.
+♻️
+Çevre Dostu
+teknede duş mevcut; şampuan kullanımı yasaktır.
+</div>
+</section>
+<section id="features">
+    <h2>Tekne Özellikleri</h2>
+    <div class="features">
+        <div class="feature">WC & Duş</div>
+        <div class="feature">Wi-Fi</div>
+        <div class="feature">Güneşlenme Alanı</div>
+        <div class="feature">220V Elektrik</div>
+        <div class="feature">Yemekli Tur</div>
+        <div class="feature">Özel Tekne (8 Kişilik)</div>
+        <div class="feature">11 Muhteşem Koy</div>
+        <div class="feature">Yüzme Molaları</div>
+        <div class="feature">Kişisel Eşyalar</div>
+        <div class="feature">Çevre Dostu</div>
+    </div>
+</section>
+<!-- Gallery -->
+  <section id="gallery">
+    <h2>Galeri</h2>
+    <div class="grid gallery">
+      <img src="images/tekne.jpg" alt="Tekne " loading="lazy">
+      <img src="images/tekne2.jpg" alt="Tekne 2" loading="lazy">
+      <img src="images/tekne3.jpg" alt="Tekne 3" loading="lazy">
+      <img src="images/tekne4.jpg" alt="Tekne 4" loading="lazy">
+      <img src="images/tekne5.jpg" alt="Tekne 5" loading="lazy">
+      <img src="images/tekne6.jpg" alt="Tekne 6" loading="lazy">
+      <img src="images/tekne7.jpg" alt="Tekne 7" loading="lazy">
+      <img src="images/tekne8.jpg" alt="Tekne 8" loading="lazy">
+      <img src="images/tekne9.jpg" alt="Tekne 9" loading="lazy">
+      <img src="images/tekne10.jpg" alt="Tekne 10" loading="lazy">
+      <img src="images/tekne11.jpg" alt="Tekne 11" loading="lazy">
+      <img src="images/tekne12.jpg" alt="Tekne 12" loading="lazy">
+      <img src="images/tekne13.jpg" alt="Tekne 13" loading="lazy">
+      <img src="images/tekne14.jpg" alt="Tekne 14" loading="lazy">
+      <img src="images/tekne15.jpg" alt="Tekne 15" loading="lazy">
+      <img src="images/tekne16.jpg" alt="Tekne 16" loading="lazy">
+      <img src="images/tekne17.jpg" alt="Tekne 17" loading="lazy">
+      <img src="images/tekne18.jpg" alt="Tekne 18" loading="lazy">
+      <img src="images/tekne19.jpg" alt="Tekne 19" loading="lazy">
+      <img src="images/tekne20.jpg" alt="Tekne 20" loading="lazy">
+      <img src="images/tekne21.jpg" alt="Tekne 21" loading="lazy">
+      <img src="images/tekne22.jpg" alt="Tekne 22" loading="lazy">
+      <img src="images/tekne23.jpg" alt="Tekne 23" loading="lazy">
+      <img src="images/tekne24.jpg" alt="Tekne 24" loading="lazy">
+      <img src="images/tekne25.jpg" alt="Tekne 25" loading="lazy">
+      <img src="images/tekne26.jpg" alt="Tekne 26" loading="lazy">
+      <img src="images/tekne27.jpg" alt="Tekne 27" loading="lazy">
+      <img src="images/tekne28.jpg" alt="Tekne 28" loading="lazy">
+      <img src="images/tekne29.jpg" alt="Tekne 29" loading="lazy">
+      <img src="images/tekne30.jpg" alt="Tekne 30" loading="lazy">
+      <img src="images/tekne31.jpg" alt="Tekne 31" loading="lazy">
+      <img src="images/tekne32.jpg" alt="Tekne 32" loading="lazy">
+      <img src="images/tekne33.jpg" alt="Tekne 33" loading="lazy">
+      <img src="images/tekne34.jpg" alt="Tekne 34" loading="lazy">
+      <img src="images/tekne35.jpg" alt="Tekne 35" loading="lazy">
+      <img src="images/tekne36.jpg" alt="Tekne 36" loading="lazy">
+      <img src="images/tekne37.jpg" alt="Tekne 37" loading="lazy">
+      <img src="images/tekne38.jpg" alt="Tekne 38" loading="lazy">
+      <img src="images/tekne39.jpg" alt="Tekne 39" loading="lazy">
+      <img src="images/tekne40.jpg" alt="Tekne 40" loading="lazy">
+      <img src="images/tekne41.jpg" alt="Tekne 41" loading="lazy">
+      <img src="images/tekne42.jpg" alt="Tekne 42" loading="lazy">
+      <img src="images/tekne43.jpg" alt="Tekne 43" loading="lazy">
+      <img src="images/tekne44.jpg" alt="Tekne 44" loading="lazy">
+      <img src="images/tekne45.jpg" alt="Tekne 45" loading="lazy">
+      <img src="images/tekne46.jpg" alt="Tekne 46" loading="lazy">
+      <img src="images/tekne47.jpg" alt="Tekne 47" loading="lazy">
+      <img src="images/tekne48.jpg" alt="Tekne 48" loading="lazy">
+      <img src="images/tekne49.jpg" alt="Tekne 49" loading="lazy">
+      <img src="images/tekne50.jpg" alt="Tekne 50" loading="lazy">
+      
+    </div>
+    </div>
+  </section>
+
+<section id="contact">
+<h2>İletişim</h2>
+<div class="card">
+  <div class="iletisim-blok" style="display: flex; justify-content: center; gap: 40px; margin: 40px 0; font-family: Arial, sans-serif;">
+
+<!-- WhatsApp Mesaj -->
+<a href="https://wa.me/905458508511?text=Merhaba,%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum.%20Fiyat%20hakkında%20almak%20istiyorum." target="_blank" class="iletisim-item">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" width="50">
+  <p>WhatsApp Mesajı</p>
+</a>
+
+  <!-- Telefon Arama -->
+  <a href="tel:+905458508511" class="iletisim-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Telefon" width="50">
+    <p>Telefonla Ara</p>
+  </a>
+
+  <!-- E-posta -->
+  <a href="mailto:info@herculesmarmaris.com" class="iletisim-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="50">
+    <p>Email Gönder</p>
+  </a>
+
+  
+
+</div>
+
+<style>
+  .iletisim-item {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .iletisim-item img {
+    display: block;
+    margin: 0 auto 8px auto;
+  }
+
+  .iletisim-item p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .iletisim-item:hover {
+    transform: translateY(-5px);
+    color: #C4713B;
+  }
+</style>
+<p>📞 +90 545 850 85 11</p>
+<p>📧 info@herculesmarmaris.com</p>
+<p>📍 Marmaris</p>
+</div>
+</section>
+
+<a href="https://wa.me/905458508511" class="whatsapp">WhatsApp</a>
+
+<footer>
+<p>© 2026 Hercules of Marmaris Kaptan Ayla</p>
+</footer>
+
+</body>
