@@ -254,7 +254,11 @@ margin-top:50px;
 </head>
 
 <body>
-
+<div class="lang-switch">
+  <span onclick="setLang('tr')">TR</span>
+  <span onclick="setLang('en')">EN</span>
+  <span onclick="setLang('ru')">RU</span>
+</div>
 <header>
 <nav>
 <h2>⚓Hercules of Marmaris</h2>
@@ -325,7 +329,7 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
 <div class="card">
 
 <h3>🏝️ Rotamızdaki Koylar</h3>
-</p>Gün boyunca ziyaret edeceğiniz koylar</p>
+</p>Turumuz boyunca  rota üzerinde 3 ila 5 farklı koyda yüzme molası verilmektedir.</p>
 	</p>Cennet Koyu</p>
 	</p>Palmiye Koyu</p>
 	</p>Kızılkum</p>
@@ -350,8 +354,7 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
 </div>
 <div class="card">
 <h3>🌙 Özel Gece & Mehtap Turları</h3>
-<p> Özel Gece & Mehtap Turları</p>
-	</p>•	Romantik mehtap turları</p>
+<p>  Mehtap Turları</p>
 	</p>•	Doğum günü, düğün veya nişan gibi özel kutlamalar için ideal</p>
 	</p>•	Sadece davetli gruba özel, samimi ve güvenli ortam</p>
 <p>8 kişilik kapasite</p>
@@ -372,10 +375,14 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
     <p>8 kişilik kapasite</p>
 </div>
 <div class="card">
-<h3> ₺ Fiyat ve Rezervasyon</h3>
+<h3> ₺ Fiyat ve Rezervasyon için</h3>
 <p> 📞+90 545 850 85 11</p>
 <p> 📧Gmail. info@herculesmarmaris.com</p>
 <p> İletişime Gecebilirsiniz</p>
+</div>
+<div class="card">
+<h3>Tur Günleri</h3>
+</p>Hergün  Saati	10:00 – 17:00</p>
 </div>
 </section>
 
@@ -387,6 +394,11 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
 <p>Güvenli ve samimi bir yolculuk.</p>
     </div>
  <div class="feature">
+      <h3>🚫🍽️Yemeksiz Tur</h3>
+        <p></p>
+         </div>
+
+      <div class="feature">
       <h3>🍽️ Yemekli Tur</h3>
       <p>Tavuk, makarna ve salata ile öğle yemeği.</p>
  </div>
@@ -427,7 +439,7 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
         <div class="feature">Güneşlenme Alanı</div>
         <div class="feature">220V Elektrik</div>
         <div class="feature">Özel Tekne (8 Kişilik)</div>
-    
+        <div class="feature" >En (Metre)	3.5 Mt </div> 
 </section>
 <!-- Gallery -->
   <section id="gallery">
@@ -538,6 +550,28 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
     transform: translateY(-5px);
     color: #C4713B;
   }
+   /* 🔥 BURAYA EKLE */
+  .lang-switch {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .lang-switch span {
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .lang-switch span:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
 </style>
 <p>📞 +90 545 850 85 11</p>
 <p>📧 info@herculesmarmaris.com</p>
