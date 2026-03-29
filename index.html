@@ -45,9 +45,12 @@ color:white;
 nav h2{font-weight:700;}
 
 nav ul{display:flex;gap:25px;list-style:none;}
-nav a{color:white;text-decoration:none;font-size:14px;}
-nav a:hover{color:#00c6ff;}
+nav a{color:white;
+text-decoration:none;
+font-size:24px;
+text-shadow:0 2px 6px rgba(0,0,0,0.7); /* 🔥 bunu ekle */
 
+}
 
 
 .hero{
@@ -74,6 +77,12 @@ nav a:hover{color:#00c6ff;}
   background:none;
   padding:0;
   max-width:100%;
+}
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px; /* 🔥 BU ÇOK ÖNEMLİ */
 }
 
 .hero h1{
@@ -138,7 +147,10 @@ h2{
 @media (max-width:768px){
   .hero{
     min-height:65vh;
-    padding:20px;
+    padding:20px;  }
+    .hero h1{
+    font-size:22px;
+  }
   }
  nav ul{
     flex-direction: column;
@@ -156,7 +168,6 @@ h2{
     padding:50px 15px;
   }
 
-  }
 
 
 section{
@@ -247,6 +258,7 @@ margin-top:50px;
 <header>
 <nav>
 <h2>⚓Hercules of Marmaris</h2>
+
 <ul>
 <li><a href="#">Ana Sayfa</a></li>
 <li><a href="#about">Hakkımızda</a></li>
@@ -256,9 +268,9 @@ margin-top:50px;
 </ul>
 </nav>
 </header>
-
 <div class="hero" id="hero">
 <div class="hero-content">
+
 
 </div>
 </div>
@@ -414,13 +426,8 @@ Bizimle çıktığınız her yolculukta, sadece koyları değil, huzuru ve mutlu
         <div class="feature">Wi-Fi</div>
         <div class="feature">Güneşlenme Alanı</div>
         <div class="feature">220V Elektrik</div>
-        <div class="feature">Yemekli Tur</div>
         <div class="feature">Özel Tekne (8 Kişilik)</div>
-        <div class="feature">11 Muhteşem Koy</div>
-        <div class="feature">Yüzme Molaları</div>
-        <div class="feature">Kişisel Eşyalar</div>
-        <div class="feature">Çevre Dostu</div>
-    </div>
+    
 </section>
 <!-- Gallery -->
   <section id="gallery">
